@@ -1,0 +1,16 @@
+<div class="dialog-container" cdkFocusRegionStart>
+  <div class="title" mat-dialog-title>{{ data.params?.title || "Üzenet" }}</div>
+  <div class="content" mat-dialog-content>
+    <p class="text" [innerHtml]="data.message"></p>
+  </div>
+  <div mat-dialog-actions>
+    <button
+      mat-button
+      class="confirm-button"
+      (click)="cancel()"
+      cdkFocusInitial
+    >
+      {{ data.params?.buttonText || "Rendben" }}
+    </button>
+  </div>
+</div>

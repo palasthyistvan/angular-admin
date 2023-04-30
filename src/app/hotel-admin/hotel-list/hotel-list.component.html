@@ -1,0 +1,26 @@
+<ng-container *ngFor="let hotel of hotelData; let i = index">
+  <div
+    appScroll
+    (elementVisible)="getHotels($event)"
+    [isTargetElement]="hotel.id == hotelData.length"
+  >
+    <table>
+      <thead>
+        <tr>
+          <th>Kép</th>
+          <th>Név</th>
+          <th>Fő/Éj</th>
+          <th>Szezonális nyitvatartás</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr (click)="navigateToManageHotel(hotel.id)">
+          <td><img [src]="hotel.imageUrl" alt="" /></td>
+          <td>{{ hotel.name }}</td>
+          <td>{{ hotel.pricePerNight }}</td>
+          <td>{{ hotel.startDate | date }} - {{ hotel.endDate | date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-container>
