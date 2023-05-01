@@ -14,18 +14,8 @@ export class HotelService {
 
   constructor(private http: HttpClient) {}
 
-  fetchHotels(currentLength: number, page: number) {
-    return this.getHotels(page, this.hotelCount).pipe(
-      map((hotels: Hotel[]) => {
-        return hotels.filter((hotel: Hotel) => {
-          const idAsNumber = parseInt(hotel.id.toString());
-          return (
-            idAsNumber > currentLength &&
-            idAsNumber < currentLength + this.hotelCount + 1
-          );
-        });
-      })
-    );
+  fetchHotels(page: number) {
+    return this.getHotels(page, this.hotelCount);
   }
 
   updateHotel(id: number, hotelData: Hotel): Observable<Hotel> {

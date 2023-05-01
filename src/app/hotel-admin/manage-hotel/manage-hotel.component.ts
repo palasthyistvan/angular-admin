@@ -18,7 +18,7 @@ export class ManageHotelComponent implements OnInit {
     id: [],
     name: [''],
     imageUrl: [''],
-    pricePerNight: [''],
+    pricePerNight: ['', [Validators.required, Validators.pattern(/^[0-9]*$/)]],
     startDate: [''],
     endDate: [''],
   });

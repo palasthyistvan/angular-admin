@@ -2,7 +2,7 @@
   <div
     appScroll
     (elementVisible)="getHotels($event)"
-    [isTargetElement]="hotel.id == hotelData.length"
+    [isTargetElement]="hotel.id === hotelData[hotelData.length - 1].id"
   >
     <table>
       <thead>

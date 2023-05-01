@@ -31,12 +31,10 @@ export class HotelListComponent implements OnInit {
 
   getHotels(fetchData: boolean) {
     if (fetchData) {
-      this.hotelsService
-        .fetchHotels(this.hotelData.length, this.pageNumber)
-        .subscribe((response) => {
-          this.pageNumber++;
-          this.hotelData = this.hotelData.concat(response);
-        });
+      this.hotelsService.fetchHotels(this.pageNumber).subscribe((response) => {
+        this.pageNumber++;
+        this.hotelData = this.hotelData.concat(response);
+      });
     }
   }
 }

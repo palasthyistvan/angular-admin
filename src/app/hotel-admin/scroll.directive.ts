@@ -18,7 +18,7 @@ export class ScrollDirective {
   public intersectionOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: [0, 0.5, 1],
+    threshold: [0, 0.9, 1],
   };
 
   ngAfterViewInit() {
@@ -35,6 +35,7 @@ export class ScrollDirective {
     entries.forEach((entry) => {
       if (entry.intersectionRatio === 1) {
         this.elementVisible.emit(true);
+        observer.disconnect();
       } else {
         this.elementVisible.emit(false);
       }

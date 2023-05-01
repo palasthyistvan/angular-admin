@@ -23,6 +23,9 @@
   font-size: 16px;
 }
 
+.button-spacer {
+  justify-content: space-between;
+}
 button.confirm-button {
   background-color: #007bff;
   color: white;

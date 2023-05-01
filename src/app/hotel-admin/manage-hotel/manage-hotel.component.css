@@ -43,7 +43,6 @@ input:focus {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin-top: 1rem;
 }
 
 .save-button {

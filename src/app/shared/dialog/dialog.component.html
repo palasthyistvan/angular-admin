@@ -3,7 +3,7 @@
   <div class="content" mat-dialog-content>
     <p class="text" [innerHtml]="data.message"></p>
   </div>
-  <div mat-dialog-actions>
+  <div mat-dialog-actions class="button-container button-spacer">
     <button
       mat-button
       class="confirm-button"
@@ -12,5 +12,6 @@
     >
       {{ data.params?.buttonText || "Rendben" }}
     </button>
+    <button mat-button class="confirm-button" mat-dialog-close>Mégsem</button>
   </div>
 </div>
